@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumDetailViewController" customModule="OperationExample" customModuleProvider="target">
+            <connections>
+                <outlet property="albumTitleLabel" destination="W3H-9e-ioN" id="fF9-mc-Xcf"/>
+                <outlet property="downloadButton" destination="cYO-Ie-aJx" id="4rq-l0-TJr"/>
+                <outlet property="tableView" destination="rF2-Uc-nNO" id="8zX-Bb-ggf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9o-HP-0Cd">
+                    <rect key="frame" x="10" y="61.5" width="60" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="cCS-kP-leL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="isv-vY-HAJ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W3H-9e-ioN">
+                    <rect key="frame" x="100" y="64" width="214" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYO-Ie-aJx">
+                    <rect key="frame" x="314" y="62" width="90" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="tYj-Ks-26v"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Download">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" title="Cancel">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="downloadAction:" destination="-1" eventType="touchUpInside" id="1rW-EO-HSC"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rF2-Uc-nNO">
+                    <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6VF-sP-4KL"/>
+                        <outlet property="delegate" destination="-1" id="HmR-JJ-2EW"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="W3H-9e-ioN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="0ex-YU-hWp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cYO-Ie-aJx" secondAttribute="trailing" constant="10" id="115-3A-p1e"/>
+                <constraint firstItem="cYO-Ie-aJx" firstAttribute="centerY" secondItem="W3H-9e-ioN" secondAttribute="centerY" id="3fN-th-jSp"/>
+                <constraint firstItem="cYO-Ie-aJx" firstAttribute="leading" secondItem="W3H-9e-ioN" secondAttribute="trailing" id="D82-0S-hKR"/>
+                <constraint firstItem="W3H-9e-ioN" firstAttribute="leading" secondItem="O9o-HP-0Cd" secondAttribute="trailing" constant="30" id="Jqz-gi-bNy"/>
+                <constraint firstItem="O9o-HP-0Cd" firstAttribute="centerY" secondItem="W3H-9e-ioN" secondAttribute="centerY" id="RxS-7k-Wc7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rF2-Uc-nNO" secondAttribute="trailing" id="XDf-ZS-ct0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rF2-Uc-nNO" secondAttribute="bottom" id="aWc-mM-pMM"/>
+                <constraint firstItem="rF2-Uc-nNO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eRp-wC-gSf"/>
+                <constraint firstItem="O9o-HP-0Cd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gXQ-cZ-LDn"/>
+                <constraint firstItem="rF2-Uc-nNO" firstAttribute="top" secondItem="W3H-9e-ioN" secondAttribute="bottom" constant="20" id="mus-WO-jCg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="82"/>
+        </view>
+    </objects>
+</document>
